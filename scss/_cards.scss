@@ -21,18 +21,23 @@ $card-padding: $global-padding !default;
 /// @type Shadow
 $card-shadow: none !default;
 
+$card-border-radius: $global-radius !default;
+
 @mixin card-base() {
   display: flex;
   border: {
     color: $light-gray;
-    radius: $global-radius;
+    radius: $card-border-radius;
     style: solid;
     width: 1px;
   }
   box-shadow: $card-shadow;
   flex-direction: column;
   flex-grow: 1;
-  overflow: hidden;
+  padding: $card-padding;
+  @if $card-border-radius > 0 {
+    overflow: hidden;
+  }
 
   @each $breakpoint, $value in $grid-column-gutter {
     $padding: rem-calc($value);
@@ -49,19 +54,37 @@ $card-shadow: none !default;
   .card-header {
     border-bottom: 1px solid $card-border-color;
     background-color: $card-header-background-color;
+    padding: $card-padding;
+
 
     .card-title {
       margin-bottom: 0;
     }
   }
 
-  .card-block, .card-footer, .card-header {
-    padding: $card-padding;
-  }
-
   .card-button {
     .button {
       margin-bottom: 0;
+    }
+  }
+
+  .card-header, .card-image, .card-button, .card-footer {
+    margin: 0 -$card-padding;
+    &:first-child {
+      margin: {
+        left: -$card-padding;
+        right: -$card-padding;
+        bottom: 0;
+        top: -$card-padding;
+      }
+    }
+    &:last-child {
+      margin: {
+        left: -$card-padding;
+        right: -$card-padding;
+        top: 0;
+        bottom: -$card-padding;
+      }
     }
   }
 }

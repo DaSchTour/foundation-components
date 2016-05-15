@@ -1,10 +1,9 @@
 {
   "name": "foundation-components",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Additional UI Components for Foundation Sites",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Daniel Schuba <daniel.schuba@daschmedia.de>",
   "homepage": "https://github.com/DaSchTour/foundation-components",
   "license": "MIT",
@@ -12,7 +11,6 @@
     "foundation-sites": "^6.2.1"
   },
   "devDependencies": {
-    "font-awesome": "^4.6.1",
     "gulp": "^3.9.1",
     "gulp-load-plugins": "^1.2.2",
     "gulp-sass": "^2.3.1"

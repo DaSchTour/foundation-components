@@ -4,3 +4,7 @@
 
 Additional Components to use in combination with Foundation Sites
 Based on components from [Semantic UI](http://www.semantic-ui.com) and [Bootstrap](http://getbootstrap.com)
+
+## Know Issues
+
+* Ribbons on cards do not work with round corners

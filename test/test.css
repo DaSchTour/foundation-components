@@ -1,0 +1,111 @@
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.2.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+.card {
+  display: flex;
+  border-color: #e6e6e6;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: none;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  margin-bottom: 1.25rem; }
+  @media screen and (min-width: 40em) {
+    .card {
+      margin-bottom: 1.875rem; } }
+  .card .card-block {
+    flex-grow: 1; }
+  .card .card-header {
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #e6e6e6;
+    padding: 1rem; }
+    .card .card-header .card-title {
+      margin-bottom: 0; }
+  .card .card-button .button {
+    margin-bottom: 0; }
+  .card .card-header, .card .card-image, .card .card-button, .card .card-footer {
+    margin: -1rem; }
+    .card .card-header:first-child, .card .card-image:first-child, .card .card-button:first-child, .card .card-footer:first-child {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-bottom: 0;
+      margin-top: -1rem; }
+    .card .card-header:last-child, .card .card-image:last-child, .card .card-button:last-child, .card .card-footer:last-child {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-top: 0;
+      margin-bottom: -1rem; }
+
+.cards .column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; }
+
+.header .icon {
+  font-size: 3em; }
+  .header .icon.round {
+    font-size: 2.0em;
+    border-radius: 50%; }
+
+.ribbon {
+  display: inline-block;
+  position: relative;
+  min-width: max-content;
+  border-color: #e6e6e6;
+  padding: 0.3em;
+  margin-bottom: 0.5rem;
+  background: #2199e8;
+  color: #fefefe;
+  border-color: #0f5f94; }
+  .ribbon.left {
+    left: calc(-1rem - 1.2em);
+    margin-right: -1.2em;
+    padding-left: calc(1rem + 1.2em);
+    padding-right: 1.2em;
+    border-radius: 0 true true 0; }
+    .ribbon.left::after {
+      left: 0;
+      border-width: 0 1.2em 1.2em 0;
+      border-right-color: inherit; }
+  .ribbon.right {
+    left: calc(100% + 1rem + 1.2em);
+    padding-left: 1.2em;
+    padding-right: calc(1rem + 1.2em);
+    text-align: left;
+    transform: translateX(-100%);
+    border-radius: true 0 0 true; }
+    .ribbon.right::after {
+      left: auto;
+      right: 0;
+      border-width: 1.2em 1.2em 0 0;
+      border-top-color: inherit; }
+  .ribbon::after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    background-color: transparent;
+    border-style: solid;
+    border-color: transparent;
+    width: 0;
+    height: 0; }
+  .ribbon.secondary {
+    background: #777;
+    color: #fefefe;
+    border-color: #444444; }
+  .ribbon.success {
+    background: #3adb76;
+    color: #fefefe;
+    border-color: #1b9448; }
+  .ribbon.warning {
+    background: #ffae00;
+    color: #fefefe;
+    border-color: #996800; }
+  .ribbon.alert {
+    background: #ec5840;
+    color: #fefefe;
+    border-color: #b42912; }

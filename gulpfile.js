@@ -10,3 +10,13 @@ gulp.task('sass', function () {
 gulp.task('sass:watch', function () {
     gulp.watch('./scss/**/*.scss', ['sass']);
 });
+
+gulp.task('sass:test', function () {
+    gulp.src('./test/**/*.scss')
+        .pipe($.sass().on('error', $.sass.logError))
+        .pipe(gulp.dest('./test'));
+});
+
+gulp.task('sass:test:watch', function () {
+    gulp.watch('./test/**/*.scss', ['sass:test']);
+});
