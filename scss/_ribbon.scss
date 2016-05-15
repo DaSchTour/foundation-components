@@ -1,0 +1,123 @@
+// Foundation Components
+// Licensed under MIT Open Source
+
+////
+/// @group ribbon
+////
+
+/// Default background color for ribbons.
+/// @type Color
+$ribbon-background: $primary-color !default;
+
+/// Default text color for ribbons.
+/// @type Color
+$ribbon-color: foreground($ribbon-background) !default;
+
+/// Default padding inside ribbons.
+/// @type Number
+$ribbon-padding: 0.3em !default;
+
+/// Minimum width of a ribbon.
+/// @type Number
+$ribbon-minwidth: 2.1em !default;
+
+/// Default font size for ribbons.
+/// @type Number
+$ribbon-font-size: 0.6rem !default;
+
+$ribbon-border-radius: $global-flexbox !default;
+$ribbon-shadow-color: $light-gray !default;
+$ribbon-triangle-size: 1.2em !default;
+$ribbon-margin: 1rem !default;
+$ribbon-offset: calc(-#{$ribbon-margin} - #{$ribbon-triangle-size}) !default;
+$ribbon-distance: calc(#{$ribbon-margin} + #{$ribbon-triangle-size}) !default;
+$ribbon-offset-right: calc(100% + #{$ribbon-margin} + #{$ribbon-triangle-size}) !default;
+$ribbon-bottom-margin: $global-margin / 2 !default;
+
+@mixin ribbon-base {
+  display: inline-block;
+  position: relative;
+  min-width: max-content;
+  border-color: $ribbon-shadow-color;
+  padding: $ribbon-padding;
+  margin-bottom: $ribbon-bottom-margin;
+
+
+  &.left {
+    left: $ribbon-offset;
+    margin-right: -$ribbon-triangle-size;
+    padding: {
+      left: $ribbon-distance;
+      right: $ribbon-triangle-size;
+    }
+    border-radius: 0 $ribbon-border-radius $ribbon-border-radius 0;
+    &::after {
+      left: 0;
+      border: {
+        width: 0 $ribbon-triangle-size $ribbon-triangle-size 0;
+        right-color: inherit;
+      }
+    }
+  }
+
+  &.right {
+    left: $ribbon-offset-right;
+    //right: $ribbon-offset;
+    padding: {
+      left: $ribbon-triangle-size;
+      right: $ribbon-distance;
+    }
+    text-align: left;
+    transform: translateX(-100%);
+    border-radius: $ribbon-border-radius 0 0 $ribbon-border-radius;
+
+    &::after {
+      left: auto;
+      right: 0;
+      border: {
+        width: $ribbon-triangle-size $ribbon-triangle-size 0 0;
+        top-color: inherit;
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+
+    top: 100%;
+
+    background-color: transparent;
+
+    border: {
+      style: solid;
+      color: transparent;
+    }
+
+    width: 0;
+    height: 0;
+  }
+}
+
+@mixin ribbon-colors {
+  @each $name, $color in $foundation-palette {
+    @if $name != primary {
+      &.#{$name} {
+        background: $color;
+        color: foreground($color);
+        border-color: darken($color, 20%);
+      }
+    } @else {
+      background: $ribbon-background;
+      color: $ribbon-color;
+      border-color: darken($ribbon-background, 20%);
+    }
+  }
+}
+
+@mixin foundation-comp-ribbon {
+  .ribbon {
+    @include ribbon-base();
+    @include ribbon-colors();
+  }
+}

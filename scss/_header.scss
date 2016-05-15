@@ -1,0 +1,18 @@
+$header-icon-size: 3em;
+
+@mixin icon-header() {
+    .icon {
+      font-size: $header-icon-size;
+      &.round {
+        font-size: $header-icon-size * .666666;
+        border-radius: 50%;
+      }
+    }
+
+}
+
+@mixin foundation-comp-header {
+  .header {
+    @include icon-header();
+  }
+}
