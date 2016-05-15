@@ -1,0 +1,20 @@
+{
+  "name": "foundation-components",
+  "description": "Additional UI Components for Foundation Sites",
+  "main": "index.js",
+  "authors": [
+    "Daniel Schuba <daniel.schuba@daschmedia.de>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/DaSchTour/foundation-components",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.1"
+  }
+}
